@@ -1,4 +1,6 @@
 import com.example.AlexLion;
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Spy;
@@ -16,6 +18,8 @@ public class AlexLionTest {
     AlexLion alexLion;
 
     @Test
+    @DisplayName("Is Alex lion have mane?")
+    @Description("Does have mane must return: true")
     public void isAlexLionHaveMane() {
         assertTrue("Alex the lion must have a mane"
                 , alexLion.doesHaveMane()
@@ -23,8 +27,13 @@ public class AlexLionTest {
     }
 
     @Test
+    @DisplayName("Check Alex lion`s friends list")
+    @Description("alexLion.getFriends() must return {Marty the zebra, Gloria the hippopotamus, Melman the giraffe} list")
     public void checkFriendsList() {
-        List<String> expectedFriendsList = Arrays.asList("Marty the zebra", "Gloria the hippopotamus", "Melman the giraffe");
+        List<String> expectedFriendsList = Arrays.asList("Marty the zebra"
+                , "Gloria the hippopotamus"
+                , "Melman the giraffe"
+        );
         List<String> actualFriendsList = alexLion.getFriends();
         assertEquals("Alex's friends list isn't what you'd expect"
                 , expectedFriendsList
@@ -33,6 +42,8 @@ public class AlexLionTest {
     }
 
     @Test
+    @DisplayName("Check Alex lion`s place of living")
+    @Description("alexLion.getPlaceOfLiving() must return: Central Park Zoo")
     public void checkPlaceOfLiving() {
         String expectedPlace = "Central Park Zoo";
         String actualPlace = alexLion.getPlaceOfLiving();
@@ -43,6 +54,8 @@ public class AlexLionTest {
     }
 
     @Test
+    @DisplayName("Check Alex lion`s kittens count")
+    @Description("alexLion.getKittens() must return 0")
     public void checkKittensCount() {
         int expectedKittens = 0;
         int actualKittens = alexLion.getKittens();
