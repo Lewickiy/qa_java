@@ -1,4 +1,6 @@
 import com.example.Feline;
+import io.qameta.allure.Description;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 
 import java.util.List;
@@ -7,6 +9,8 @@ import static org.junit.Assert.assertEquals;
 
 public class FelineTest {
     @Test
+    @DisplayName("Check food list eat meat")
+    @Description("Feline.eatMeat() must return {Животные, Птицы, Рыба}")
     public void checkFoodListEatMeat() throws Exception {
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
         List<String> actualFood = new Feline().eatMeat();
@@ -16,6 +20,8 @@ public class FelineTest {
     }
 
     @Test
+    @DisplayName("Check family name value")
+    @Description("Feline.getFamily() must return \"Кошачьи\"")
     public void checkFamilyNameValue() {
         String expectedFamily = "Кошачьи";
         String actualFamily = new Feline().getFamily();
@@ -25,6 +31,8 @@ public class FelineTest {
     }
 
     @Test
+    @DisplayName("Check count of kittens without parameters")
+    @Description("Feline.getKittens() must return 1")
     public void checkGetKittensWithoutParameters() {
         int expectedKittens = 1;
         int actualKittens = new Feline().getKittens();
